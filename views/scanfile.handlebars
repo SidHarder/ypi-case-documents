@@ -1,7 +1,14 @@
 <div>
+  <div style="display: inline-block;">
   <form action="/scanfiles/{{folderName}}/{{fileName}}/move" method="post">
     <input type="text" name="masterAccessionNo" style="margin-left: 10pt;"/>
-    <input type="submit" value="Move"  style="width: 50pt;"/>
-  </form>  
+    <input type="submit" name="buttonSubmit" value="Move"  style="width: 50pt;"/>
+  </form>
+  </div>
+  <div style="display: inline-block;">
+    <form action="/scanfiles/{{folderName}}/{{fileName}}/back" method="post">
+      <input type="submit" name="buttonSubmit" value="Back" style="width: 50pt;" />
+    </form>
+  </div>  
 </div>
-<iframe src="{{url}}" style="position: absolute; height: 100%; width: 100%; border: none"></iframe>
+<iframe src="{{url}}" style="position: absolute; height: 100%; width: 100%; border: none; padding: 5px"></iframe>
