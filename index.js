@@ -13,10 +13,15 @@ var path = require('path');
 
 app.use('/documents', express.static(process.env.ACCESSION_DOCUMENTS_LOCATION));
 app.use('/scanning', express.static(process.env.SCANNED_DOCUMENTS_LOCATION));
+app.use('/pdf',savePdf);
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
+function savePdf(req, res) {
+  console.log('hello');
+}
 
 var isDirectory = directoryName => {
   return fs.lstatSync(directoryName).isDirectory()
